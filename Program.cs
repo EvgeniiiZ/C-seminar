@@ -96,10 +96,44 @@
 
 // Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 
-Console.Write("ВВедите число N: ");
-int N=int.Parse(Console.ReadLine());
+// Console.Write("ВВедите число N: ");
+// int N=int.Parse(Console.ReadLine());
 
-for(int i = 1; i <= N; i++)
+// for(int i = 1; i <= N; i++)
+// {
+//     Console.Write($"{i*i*i} ");
+// } 
+
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+
+
+// Console.Write("ВВедите число A: ");
+// int a=int.Parse(Console.ReadLine());
+// Console.Write("ВВедите число B: ");
+// int b=int.Parse(Console.ReadLine());
+
+
+// int c = 1;
+//     for (int i = 1; i <= b; i ++)
+//     {
+//         c = c * a;
+//     }
+    
+// Console.WriteLine($"Число А в степени Б {(c)} ");
+
+
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+void sumDigits(int number)
 {
-    Console.Write($"{i*i*i} ");
-} 
+    Console.Write($"sum all digits {number} = ");
+    int sum = 0;
+    while(number > 0)
+    {
+        sum += number % 10;
+        number /= 10;
+    }
+    Console.Write($"{sum}");
+}
+
+sumDigits(9012);
