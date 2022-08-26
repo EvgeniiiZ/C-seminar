@@ -124,16 +124,149 @@
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-void sumDigits(int number)
-{
-    Console.Write($"sum all digits {number} = ");
-    int sum = 0;
-    while(number > 0)
-    {
-        sum += number % 10;
-        number /= 10;
-    }
-    Console.Write($"{sum}");
-}
+// void sumDigits(int number)
+// {
+//     Console.Write($"sum all digits {number} = ");
+//     int sum = 0;
+//     while(number > 0)
+//     {
+//         sum += number % 10;
+//         number /= 10;
+//     }
+//     Console.Write($"{sum}");
+// }
 
-sumDigits(9012);
+// sumDigits(9012);
+
+
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+
+// int [] CreateRandomArray(int N, int start, int end)
+// {
+//        int[] RandomArray = new int[N];
+//     for (int i = 0; i < N; i++)
+//     {
+//     RandomArray[i] = new Random().Next(start, end + 1);
+//     }
+//     return RandomArray;
+// }
+// void ShowArray(int[] array)
+// {
+// for (int i = 0; i < array.Length; i++)
+// {
+//     Console.Write(array[i] + " ");
+// }
+// Console.WriteLine("");
+// }
+// void EvenOne(int[] array1)
+// {
+//     int count = 0;
+//     for (int i = 0; i < array1.Length; i++)
+//     {
+//         if (array1[i] % 2 == 0)
+//         {
+//             count++;
+//         }
+//     }
+//     Console.WriteLine($"Kоличество чётных чисел в массиве {count}");
+// }
+// Console.WriteLine("Введите количество элементов массива");
+// int num = Convert.ToInt32(Console.ReadLine());
+// int min = 100;
+// int max = 999;
+
+// int[] myRandomArray = CreateRandomArray(num, min, max);
+// ShowArray(myRandomArray);
+// Console.WriteLine("");
+// EvenOne(myRandomArray);
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
+
+// int [] CreateRandomArray(int N, int start, int end)
+// {
+//        int[] RandomArray = new int[N];
+//     for (int i = 0; i < N; i++)
+//     {
+//     RandomArray[i] = new Random().Next(start, end + 1);
+//     }
+//     return RandomArray;
+// }
+// void ShowArray(int[] array)
+// {
+// for (int i = 0; i < array.Length; i++)
+// {
+//     Console.Write(array[i] + " ");
+// }
+// Console.WriteLine("");
+// }
+// void Summa(int[] array1)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < array1.Length; i+=2)
+//     {
+                
+//      sum = sum + array1[i];
+        
+//     }
+//     Console.WriteLine($"сумму элементов, стоящих на нечётных позициях {sum}");
+// }
+// Console.WriteLine("Введите количество элементов массива");
+// int num = Convert.ToInt32(Console.ReadLine());
+// int min = 0;
+// int max = 9;
+
+// int[] myRandomArray = CreateRandomArray(num, min, max);
+// ShowArray(myRandomArray);
+// Console.WriteLine("");
+// Summa(myRandomArray);
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+int [] CreateRandomArray(int N, int start, int end)
+{
+       int[] RandomArray = new int[N];
+    for (int i = 0; i < N; i++)
+    {
+    RandomArray[i] = new Random().Next(start, end + 1);
+    }
+    return RandomArray;
+}
+void ShowArray(int[] array)
+{
+for (int i = 0; i < array.Length; i++)
+{
+    Console.Write(array[i] + " ");
+}
+Console.WriteLine("");
+}
+void Raz(int[] array1)
+{
+     int max1 = array1[0];
+     int min1 = array1[0];
+    for (int i = 0; i < array1.Length; i++)
+    {
+           
+        if (array1[i] > max1)
+        {
+            max1 = array1[i];
+        }
+        if (array1[i] < min1)
+        {
+            min1 = array1[i];
+        }
+        
+    }
+    int razn = max1 - min1;
+    Console.WriteLine($"разницу между максимальным и минимальным элементов массива {razn}");
+}
+Console.WriteLine("Введите количество элементов массива");
+int num = Convert.ToInt32(Console.ReadLine());
+int min = 0;
+int max = 9;
+
+int[] myRandomArray = CreateRandomArray(num, min, max);
+ShowArray(myRandomArray);
+Console.WriteLine("");
+Raz(myRandomArray);
