@@ -224,49 +224,160 @@
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
-int [] CreateRandomArray(int N, int start, int end)
-{
-       int[] RandomArray = new int[N];
-    for (int i = 0; i < N; i++)
-    {
-    RandomArray[i] = new Random().Next(start, end + 1);
-    }
-    return RandomArray;
-}
-void ShowArray(int[] array)
-{
-for (int i = 0; i < array.Length; i++)
-{
-    Console.Write(array[i] + " ");
-}
-Console.WriteLine("");
-}
-void Raz(int[] array1)
-{
-     int max1 = array1[0];
-     int min1 = array1[0];
-    for (int i = 0; i < array1.Length; i++)
-    {
+// int [] CreateRandomArray(int N, int start, int end)
+// {
+//        int[] RandomArray = new int[N];
+//     for (int i = 0; i < N; i++)
+//     {
+//     RandomArray[i] = new Random().Next(start, end + 1);
+//     }
+//     return RandomArray;
+// }
+// void ShowArray(int[] array)
+// {
+// for (int i = 0; i < array.Length; i++)
+// {
+//     Console.Write(array[i] + " ");
+// }
+// Console.WriteLine("");
+// }
+// void Raz(int[] array1)
+// {
+//      int max1 = array1[0];
+//      int min1 = array1[0];
+//     for (int i = 0; i < array1.Length; i++)
+//     {
            
-        if (array1[i] > max1)
-        {
-            max1 = array1[i];
-        }
-        if (array1[i] < min1)
-        {
-            min1 = array1[i];
-        }
+//         if (array1[i] > max1)
+//         {
+//             max1 = array1[i];
+//         }
+//         if (array1[i] < min1)
+//         {
+//             min1 = array1[i];
+//         }
         
-    }
-    int razn = max1 - min1;
-    Console.WriteLine($"разницу между максимальным и минимальным элементов массива {razn}");
-}
-Console.WriteLine("Введите количество элементов массива");
-int num = Convert.ToInt32(Console.ReadLine());
-int min = 0;
-int max = 9;
+//     }
+//     int razn = max1 - min1;
+//     Console.WriteLine($"разницу между максимальным и минимальным элементов массива {razn}");
+// }
+// Console.WriteLine("Введите количество элементов массива");
+// int num = Convert.ToInt32(Console.ReadLine());
+// int min = 0;
+// int max = 9;
 
-int[] myRandomArray = CreateRandomArray(num, min, max);
-ShowArray(myRandomArray);
-Console.WriteLine("");
-Raz(myRandomArray);
+// int[] myRandomArray = CreateRandomArray(num, min, max);
+// ShowArray(myRandomArray);
+// Console.WriteLine("");
+// Raz(myRandomArray);
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+
+// double[,] FillArray(int size, int k1, int b1, int k2, int b2, double x)
+// {
+//     double[,] array = new double[3, size + 1];
+//     for (int i = 0; i <= size; i++)
+//     {
+//         array[0, i] = x + i * 0.01;
+//         array[1, i] = k1 * (x + i * 0.01) + b1;
+//         array[2, i] = k2 * (x + i * 0.01) + b2;
+//     }
+//     return array;
+// }
+
+
+// double YOfLine(double x, int k, int b)
+// {
+//     double y = k * x + b;
+//     return y;
+// }
+
+// Console.Clear();
+// Console.Write("Введите k для первой прямой: ");
+// int k1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите  b для первой прямой: ");
+// int b1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите  k для второй прямой: ");
+// int k2 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите b для второй прямой: ");
+// int b2 = Convert.ToInt32(Console.ReadLine());
+// if (k1 == k2)
+// {
+//     Console.WriteLine("Прямые параллельны");
+// }
+// else
+// {
+//     int minBorder = 0;
+//     int maxBorder = 1;
+
+//     double diffMin = YOfLine(minBorder, k1, b1) - YOfLine(minBorder, k2, b2);
+//     double diffMax = YOfLine(maxBorder, k1, b1) - YOfLine(maxBorder, k2, b2);
+//     Console.WriteLine($"{diffMin}, {diffMax}");
+
+    
+//     while ((diffMax * diffMin) > 0)
+//     {
+//         if (Math.Abs(diffMax) > Math.Abs(diffMin))
+//         {
+//             maxBorder = minBorder;
+//             minBorder -= 1;
+//         }
+//         else
+//         {
+//             minBorder = maxBorder;
+//             maxBorder += 1;
+//         }
+//         diffMin = YOfLine(minBorder, k1, b1) - YOfLine(minBorder, k2, b2);
+//         diffMax = YOfLine(maxBorder, k1, b1) - YOfLine(maxBorder, k2, b2);
+//     }
+
+//        double[,] newArray = FillArray(100, k1, b1, k2, b2, minBorder);
+//     double minValue = Math.Abs(newArray[1, 0] - newArray[2, 0]);
+//     double[] crossPoint = {newArray[0, 0], newArray[1, 0]};
+//     for (int i = 1; i < newArray.GetLength(1); i++)
+//     {
+//         if ((Math.Abs(newArray[1, i] - newArray[2, i])) < minValue)
+//         {
+//             crossPoint[0] = newArray[0, i];
+//             crossPoint[1] = newArray[1, i];
+//             minValue = Math.Abs(newArray[1, i] - newArray[2, i]);
+//         }
+//     }
+
+//     Console.WriteLine($"Координаты точки пересечения: ({crossPoint[0]:f2}, {crossPoint[1]:f2})");
+//     Console.WriteLine();
+
+    
+//     Console.WriteLine("Проверка координат точки пересечения математическим методом:");
+//     double xCrossPoint = (double)(b2 - b1) / (k1 - k2);
+//     Console.WriteLine($"X = {xCrossPoint}, Y = {YOfLine(xCrossPoint, k2, b2)}");
+// }
+
+// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+Console.Write("ВВедите числа через пробел: ");
+int [] numbers = GetArrayFromString(Console.ReadLine());
+Console.WriteLine($"Количество чисел больше 0-> {GetCountPositiveElements(numbers)}");
+Console.WriteLine();
+
+int [] GetArrayFromString(string stringArray)
+{
+    string[] numS = stringArray.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+    int[] result = new int[numS.Length];
+    for (int i = 0; i < result.Length; i++)
+    {
+        result[i] = int.Parse(numS[i]);
+    }
+    return result;
+}
+
+int GetCountPositiveElements(int[] array)
+{
+    int count = 0;
+    foreach (var item in array)
+    {
+        if(item>0) count++;
+    }
+    return count;
+}
